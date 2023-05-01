@@ -1,0 +1,23 @@
+<template>
+    <lightning-combobox
+            name="progress"
+            label="Account"
+            value={value}
+            placeholder="Select Account"
+            options={allAccountOption}
+            onchange={handleChange} ></lightning-combobox>
+    <div if:true={show}>
+        <lightning-combobox
+            name="progress"
+            label="Contact"
+            placeholder="Select Contact"
+            options={allContactOption}
+            onchange={handleChangeOfContact} ></lightning-combobox>
+        <lightning-combobox
+            name="progress"
+            label="Opportunity"
+            placeholder="Select Opportunity"
+            options={allOpportunityOption}
+            onchange={handleChangeOfOpportunity} ></lightning-combobox>
+    </div>
+</template>

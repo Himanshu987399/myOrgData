@@ -1,0 +1,21 @@
+<apex:page >
+    <apex:sectionHeader title="Employee" subtitle="New Employees">
+    </apex:sectionHeader>
+    <apex:form >
+        <apex:pageBlock title="Employee" helpTitle="needhelp???" helpurl="https://web.skype.com/">
+            <apex:facet name="header">
+                this is header info <br/>
+            </apex:facet>
+            <apex:facet name="caption">
+                Name : himanshu Sharma <br/>
+                Age  : 20 <br/>
+                City : Ghaziabad
+            </apex:facet>
+            <apex:facet name="footer">
+                this is footer <br/>
+            </apex:facet>
+        </apex:pageBlock> 
+    </apex:form>
+    
+    
+</apex:page>

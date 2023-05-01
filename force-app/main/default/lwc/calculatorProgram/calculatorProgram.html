@@ -1,0 +1,11 @@
+<template>
+  <div key={di.description} for:each={value} for:item="di">
+    
+        <lightning-card  title={di.name} >
+                <div style="height:300px;width:300px">
+                    <p>{di.description}</p>
+                </div>
+        </lightning-card>
+    
+  </div>
+</template>

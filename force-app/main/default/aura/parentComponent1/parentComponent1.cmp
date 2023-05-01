@@ -1,0 +1,12 @@
+<aura:component controller='tested11' implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+	<aura:attribute type="string" name ="ValueofName"></aura:attribute>
+    <aura:attribute type="contact" name="valueofobject"></aura:attribute>
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}"></aura:handler>
+    <h3>Parent component</h3>
+    <h3>value is {!v.valueofobject.Name}</h3>
+  <!--  <c:childComponent1 valuetest="{!v.ValueofName}"/>
+    <c:parentComponent/>
+    <aura:input ></aura:input>
+-->
+    
+</aura:component>

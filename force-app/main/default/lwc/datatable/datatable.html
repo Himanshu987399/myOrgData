@@ -1,0 +1,17 @@
+<!--Create a LWC component to show related contact of an account in datatable. 
+Account will be a searchable field on top where I can change the value.-->
+<template>
+    <div>
+        <lightning-input type="text" variant="standard" name="name" label="Search Account" placeholder="type here..." onchange={onAccountNameValue}></lightning-input>
+        <lightning-button variant="base" label="Search" title="Search" onclick={handleClick}></lightning-button>
+    </div>
+    <div if:true={data}>
+        <lightning-datatable
+            key-field="id"
+            data={data}
+            columns={columns}
+            >
+        </lightning-datatable>
+    </div>
+
+</template>

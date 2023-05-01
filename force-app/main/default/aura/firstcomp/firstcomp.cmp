@@ -1,0 +1,15 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="username" type="String"></aura:attribute>
+    <aura:attribute name="checked01" type="boolean"></aura:attribute>
+    <aura:attribute name="checked02" type="boolean"></aura:attribute>
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}"></aura:handler>
+    
+    <aura:if isTrue="{!v.checked01}">
+        <lightning:input value="{!v.username}" label="USERNAME" ></lightning:input>
+        <lightning:button class="button" variant="brand" label="LOGIN" title="Brand action" onclick="{!c.handleClick}" />
+    </aura:if>
+    <aura:if isTrue="{!v.checked02}">
+    	<c:Secondcomp checked ="{!v.username}" ></c:Secondcomp>
+    </aura:if>
+    
+</aura:component>

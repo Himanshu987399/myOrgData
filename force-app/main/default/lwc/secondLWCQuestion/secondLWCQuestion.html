@@ -1,0 +1,24 @@
+<template>
+    <div>Account
+        <select class="slds-select" name="accListIndex" onchange={handlechange}>
+            <template for:each={accList} for:item="user" >
+                <option key={user.Id} value={user.Id} >{user.Name}</option>
+            </template>
+        </select>
+    </div>
+    <div>Opportunity
+        <select class="slds-select" name="OppListIndex">
+            <template for:each={opplist} for:item="user" >
+                <option key={user.Id} value={user.Id} >{user.Name}</option>
+            </template>
+        </select>
+    </div>
+    <div>Contact
+        <select class="slds-select frm" name="conListIndex">
+            <template for:each={conlist} for:item="user" >
+                <option key={user.Id} value={user.Id} >{user.Name}</option>
+            </template>
+        </select>
+    </div>
+   
+</template>

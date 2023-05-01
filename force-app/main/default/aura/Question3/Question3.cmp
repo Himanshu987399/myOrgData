@@ -1,0 +1,12 @@
+<!--Create an Aura component in the opportunity that will update the close date of opportunity. display component in a pop up(standard).-->
+<aura:component controller ="LightningApex3" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name ="opplist" type = "list"></aura:attribute>
+    <aura:handler name ="init" value="{!this}" action="{!c.doinit}"></aura:handler>
+    <lightning:select label ="Opportunity List" aura:id="updatevalue">
+        <aura:iteration items="{!v.opplist}" var="opp">
+            <option value="{!opp.Id}">{!opp.Name}</option>
+        </aura:iteration>
+    </lightning:select>
+    <lightning:input label="Enter Closed Date" type="Date" aura:id="updateclosed"></lightning:input>
+    <lightning:button  variant="brand" label="Update" title="Brand action" onclick="{! c.handleClick }" />
+</aura:component>

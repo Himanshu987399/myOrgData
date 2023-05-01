@@ -1,0 +1,34 @@
+<!--<template>
+    <div>
+        <lightning-input value={name} label="Name" type="text" name="input1"></lightning-input>
+    <lightning-input value={account_no} label="Account No"></lightning-input>
+
+    </div>
+    <div class="frm">
+        <lightning-button variant="brand" label="Submit" title="Primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+
+    </div>
+
+
+
+</template>-->
+<template>
+    <lightning-card title="Create Account Record">
+        <lightning-layout>
+            <lightning-layout-item size="6">
+               
+                <lightning-input class="slds-p-around_medium" label="Name" name="accoutName" 
+                    onchange={nameChangedHandler}></lightning-input>
+                    
+                <lightning-input class="slds-p-around_medium" label="Account Number" name="accoutNumber"
+                    onchange={numberChangedHandler}></lightning-input>
+
+                <lightning-input class="slds-p-around_medium" label="Phone" type="phone" name="accountPhone"                    onchange={phoneChangedHandler}></lightning-input>
+                
+                <lightning-button class="slds-m-left_x-small" label="Create Account" variant="brand" 
+                    onclick={createAccount}></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+
+</template>

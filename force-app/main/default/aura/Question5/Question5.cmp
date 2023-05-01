@@ -1,0 +1,22 @@
+<!--"Create an aura component that will display all of the objects in the org as a picklist. and if we select the object from picklist then
+another picklist will display fields name."-->
+<aura:component controller="auraquestion5" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:handler name = "init" value = "{!this}" action = "{!c.doInit}"></aura:handler>
+    <aura:attribute name = "Objects" type = "SObject" default = "[]"></aura:attribute>
+    <aura:attribute name = "Fields" type = "SObjectType"></aura:attribute>
+    <aura:attribute name = "TypeOfTheField" type = "String"></aura:attribute>
+    <aura:attribute name = "Api" type = "String"></aura:attribute>
+    <lightning:select label = "ALL OBJECT" aura:id = "objectName" onchange = "{!c.onSelect11}"> 
+        <aura:iteration items="{!v.Objects}" var= "ob">
+            <option value= "{!ob}">{!ob}</option>
+        </aura:iteration>
+    </lightning:select>
+    <lightning:select label = "FIELD OF SELECTED OBJECT" aura:id = "FieldName" onchange = "{!c.onSelect12}"> 
+        <aura:iteration items="{!v.Fields}" var= "fl">
+            <option value= "{!fl}">{!fl}</option>
+        </aura:iteration>
+    </lightning:select>
+    <lightning:input label ="Type Of The Field"  value = "{!v.TypeOfTheField}">{!TypeOfTheField}</lightning:input>
+    <lightning:input label ="Api Name Of The Field"  value = "{!v.Api}">{!Api}</lightning:input>
+    
+</aura:component>

@@ -1,0 +1,24 @@
+<template>
+	<div class="firstDiv">
+		<div class="slds-align_absolute-center">
+			<div class="slds-grid slds-gutters">
+				<div class="slds-col" style="width:600px">
+					<lightning-input type="text" variant="standard" name="name" label="Account Name"
+						placeholder="Search here..." onchange={searchDataChange}></lightning-input>
+				</div>
+				<div class="slds-col" style="margin-top: auto;">
+					<lightning-button variant="brand" label="Search..." title="titleName" onclick={serachDataClick}>
+					</lightning-button>
+				</div>
+			</div>
+
+		</div>
+		<div class="slds-align_absolute-center" if:true={noRecords}>
+			<span>No Record Available</span>
+		</div>
+		<div if:true={showTable}>
+			<lightning-datatable key-field="id" data={accounts} columns={columns} onrowaction={handleRowAction}>
+			</lightning-datatable>
+		</div>
+	</div>
+</template>

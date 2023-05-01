@@ -1,0 +1,17 @@
+<template>
+    <lightning-card class="lightningCard">
+        <div class ="slds-p-horizontal_small">
+            <lightning-layout multiple-rows>
+                <template for:each={updateData} for:item="record">
+                    <lightning-layout-item size="12" key={record}>                        
+                        <lightning-input 
+                            label={record.label}
+                            value={record.value}
+                            read-only
+                        ></lightning-input> 
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

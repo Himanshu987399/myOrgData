@@ -1,0 +1,91 @@
+<aura:component controller="saveContact" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="contactList" type="Contact[]"/>
+    <aura:attribute name="FirstRow" type="boolean" default="false"/>
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="onlyfive" type="boolean" default="false"></aura:attribute>
+    <aura:attribute name="count" type="Integer" default="0"></aura:attribute>
+    <div class="slds-m-around--xx-large">
+        <!--<aura:if isTrue="{!v.FirstRow}">
+                <h1 class="slds-page-header__title">
+                    <lightning:buttonIcon iconName="utility:add" size="large" variant="bare" alternativeText="Add" onclick="{!c.addRow}"/>
+                </h1>
+                
+                <div class="container-fluid">
+                    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                        
+                        <tbody>
+                            <aura:iteration items="{!v.contactList}" var="con" indexVar="index">
+                                <tr>
+                                    <td>
+                                        {!index + 1}
+                                    </td>
+                                    <td>
+                                        <lightning:input name="conFName" type="text" required="true" maxlength="15" label="First Name" value="{!con.FirstName}" />
+                                    </td>
+                                    <td>
+                                        <lightning:input name="conLName" type="text" required="true" maxlength="15" label="Last Name" value="{!con.LastName}" />
+                                    </td>
+                                    
+                                    <td>
+                                        <a data-record="{!index}">
+                                            <lightning:buttonIcon iconName="utility:add" size="large" variant="bare" alternativeText="Add" onclick="{!c.addRow}"/>
+                                        </a>
+                                        
+                                        <a onclick="{!c.removeRows}" data-record="{!index}">
+                                            <lightning:icon iconName="utility:delete" size="small" alternativeText="Delete"/>
+                                            <span class="slds-assistive-text">Delete</span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </aura:iteration>
+                        </tbody>
+                    </table>
+                    <div class="slds-align_absolute-center slds-p-top_small">
+                        <lightning:button variant="brand" label="Save" title="Brand action" onclick="{!c.save}" />
+                    </div>
+                </div>
+            </aura:if>-->
+        <lightning:card title="Create Contact">
+            <aura:if isTrue="{!and(v.FirstRow, v.onlyfive)}">
+                <div class="container-fluid slds-m-top_xx-small" style="margin:10px">
+                    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                        <tbody>
+                            <aura:iteration items="{!v.contactList}" var="con" indexVar="index">
+                                <tr>
+                                    <div>
+                                        {!index + 1}
+                                    </div>
+                                    <div>
+                                        <lightning:input name="conFName" type="text" required="true" maxlength="15" label="First Name" value="{!con.FirstName}" />
+                                    </div>
+                                    <div>
+                                        <lightning:input name="conLName" type="text" required="true" maxlength="15" label="Last Name" value="{!con.LastName}" />
+                                    </div>
+                                    <div style="display:flex">
+                                        <div style="margin:10px">
+                                            <a onclick="{!c.removeRows}" data-record="{!index}">
+                                                <lightning:button label="Delete" iconName="utility:delete" iconPosition="left"  variant="destructive" />
+                                            </a>
+                                        </div>
+                                        
+                                    </div>
+                                </tr>
+                            </aura:iteration>
+                        </tbody>
+                    </table>
+                </div>
+            </aura:if>
+            <div style="display:flex">
+                <div style="margin:10px">
+                    <lightning:button variant="brand" label="Add Application" iconName="utility:add" iconPosition="left" onclick='{!c.addRow}'></lightning:button>
+                </div>
+                <aura:if isTrue="{!and(v.FirstRow, v.onlyfive)}">
+                    <div style="margin:10px">
+                        <lightning:button label="Save" iconName="utility:save" iconPosition="left" onclick="{!c.save}" variant="brand" />
+                    </div>
+                </aura:if>
+            </div>
+            
+        </lightning:card>   
+    </div>
+</aura:component>

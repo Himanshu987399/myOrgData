@@ -1,0 +1,10 @@
+.dummy{
+	color : black;
+}
+.firstDiv{
+	background-color: white;
+}
+.THIS .slds-button__icon_left {
+    margin-right: auto;
+    margin-left: auto;
+}

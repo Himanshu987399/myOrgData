@@ -1,0 +1,46 @@
+<apex:page controller="phoolsirquestionapex" >
+    
+    <body>
+        
+        <div style="position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    display: block;
+                    margin: auto;
+                    vertical-align: middle;
+                    border-style: solid;
+                    width: 500px;
+                    height: 500px;">
+            <div style="display:flex; margin-top:20px">
+                <div style="margin-left:10px;">
+                    <span style="font-size:medium;">Select option =</span>
+                </div>
+                <div style="margin-left:10px;">
+                    <select id="option" onchange="{!changeoption}">
+                        <option value="none">--None--</option>
+                        <option value="yes">YES</option>
+                        <option value="no">NO</option>
+                    </select>
+                      
+                </div>
+            </div>
+            
+            <div id="out" Style="display:flex;">
+                <div style="display:flex; margin-top:20px">
+                    <div style="margin-left:10px;">
+                        <span style="font-size:medium;">Field = </span>
+                    </div>
+                    <div style="margin-left:10px;">
+                        <input style="width:315px" id="theTextInput" type="text" name="theTextInput" />
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </body>
+    
+</apex:page>

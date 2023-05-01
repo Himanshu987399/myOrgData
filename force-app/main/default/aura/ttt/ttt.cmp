@@ -1,0 +1,11 @@
+<aura:component>
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}"/>
+    {!$Locale.language}<br>
+    </br>
+    {!$Locale.timezone}<br>
+   </br>
+    {!$Locale.numberFormat}<br>
+   </br>
+    {!$Locale.currencyFormat}<br>
+</br>   
+</aura:component>

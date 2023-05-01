@@ -1,0 +1,75 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="Offering1" type="String" />
+    <aura:attribute name="Offering2" type="String" />
+    <aura:attribute name="Offering3" type="String" />
+    <aura:attribute name="one" type="boolean"/>
+    <aura:attribute name="two" type="boolean"/>
+    <aura:attribute name="three" type="boolean"/>
+    <aura:attribute name="one1" type="boolean"/>
+    <aura:attribute name="two1" type="boolean"/>
+    <aura:attribute name="three1" type="boolean"/>
+    <aura:attribute name="one2" type="boolean"/>
+    <aura:attribute name="two2" type="boolean"/>
+    <aura:attribute name="three2" type="boolean"/>
+    <aura:handler name = "init" value = "{!this}" action = "{!c.doInit}"></aura:handler>
+    
+    <div  class="slds-grid slds-wrap">
+        
+        <div class="slds-col slds-size_4-of-12">
+            <lightning:select name="select1" label="Priority 1" required="true" onchange="{!c.changeAction}">
+                <option value="">choose one...</option>
+                <aura:if isTrue="{!v.one}">
+                    <option value="1">1</option>
+                    
+                </aura:if>
+                <aura:if isTrue="{!v.two}">
+                    <option value="2">2</option>
+                    
+                </aura:if>
+                <aura:if isTrue="{!v.three}">
+                    <option value="3">3</option>
+                    
+                </aura:if>
+            </lightning:select>
+        </div>
+        
+        
+        <div class="slds-col slds-size_4-of-12" style="padding-left:10px;" onchange="{!c.changeAction1}">
+            <lightning:select  name="select1" label="Priority 2" required="true">
+                <option value="">choose one...</option>
+                <aura:if isTrue="{!v.one1}">
+                    <option value="1">1</option>
+                    
+                </aura:if>
+                <aura:if isTrue="{!v.two1}">
+                    <option value="2">2</option>
+                    
+                </aura:if>
+                <aura:if isTrue="{!v.three1}">
+                    <option value="3">3</option>
+                    
+                </aura:if>
+            </lightning:select>
+        </div>
+        
+        
+        <div class="slds-col slds-size_4-of-12"  style="padding-left:10px;" onchange="{!c.changeAction2}">
+            <lightning:select name="select1" label="Priority 3" required="true">
+                <option value="">choose one...</option>
+                <aura:if isTrue="{!v.one2}">
+                    <option value="1">1</option>
+                    
+                </aura:if>
+                <aura:if isTrue="{!v.two2}">
+                    <option value="2">2</option>
+                    
+                </aura:if>
+                <aura:if isTrue="{!v.three2}">
+                    <option value="3">3</option>
+                    
+                </aura:if>
+            </lightning:select>
+        </div>
+        
+    </div>
+</aura:component>

@@ -1,0 +1,11 @@
+.dummy{
+	color : black;
+}
+.marginAllSide{
+	margin: 5%;
+}
+.exampleHolder{
+    position: relative;
+    width: 80px;
+    height: 80px;
+}

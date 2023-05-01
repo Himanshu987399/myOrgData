@@ -1,0 +1,38 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Search Property">
+        <div class="slds-var-p-around_small">
+            <template if:true={showpicklist}>
+                <lightning-combobox label="Country"
+                                    name="Country"
+                                    options={controllingPicklist} 
+                                    value={selectedControlling}
+                                    onchange={fetchDependentValue}
+                                    >
+                </lightning-combobox>
+            </template>
+            <template if:true={showdependent}>
+                <lightning-combobox label="State"
+                                    name="State"
+                                    options={finalDependentVal} 
+                                    value={selectedControlling}
+                                    disabled={dependentDisabled}
+                                    onchange ={fetchStateValue}                                   
+                                    >
+                </lightning-combobox>
+            </template>
+            <div if:true={showSearchButton} class="slds-m-top_x-small">
+                <lightning-button variant="brand" label="Search Property" title="Search Property" icon-name="utility:search" onclick={handleClick}></lightning-button>
+            </div>
+            <div if:true={showListOfRecord} class="slds-m-top_x-small">
+                <lightning-datatable
+                        key-field="id"
+                        data={listOfData}
+                        columns={columns}>
+                </lightning-datatable>
+            </div>
+            <div if:true={showZeroRecord} class="slds-m-top_x-small">
+                <h6><b> No Property Available </b></h6>
+            </div>
+        </div>
+    </lightning-card>
+</template>

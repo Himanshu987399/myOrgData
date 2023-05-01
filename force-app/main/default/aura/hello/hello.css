@@ -1,0 +1,16 @@
+.THIS.tableFixHead {
+      width: 500px;
+      table-layout: fixed;
+      border-collapse: collapse;
+    }
+.THIS.tableFixHead tbody {
+      display: block;
+      width: 100%;
+      overflow: auto;
+    }
+    .THIS.tableFixHead thead tr {
+      display: block;
+    }
+    .THIS.tableFixHead th td{
+      padding: 5px 10px;
+    }

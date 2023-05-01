@@ -1,0 +1,21 @@
+<aura:component controller="Question2aura" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name ="acclist" type="list"></aura:attribute>
+    <aura:attribute name ="opplist" type="list"></aura:attribute>
+    <aura:attribute name ="conlist" type="list"></aura:attribute>
+    <aura:handler name ="init" value="{!this}" action="{!c.doinit}"></aura:handler>
+    <lightning:select label="Account List" aura:id="retriveid" onchange="{!c.accountchange}">
+        <aura:iteration items="{!v.acclist}" var="ac">
+            <option value="{!ac.Id}">{!ac.Name}</option>
+        </aura:iteration>        
+    </lightning:select>
+    <lightning:select label="Opportunity List" >
+        <aura:iteration items="{!v.opplist}" var="ac">
+            <option value="{!ac.Id}">{!ac.Name}</option>
+        </aura:iteration>        
+    </lightning:select>
+    <lightning:select label="Contact List" >
+        <aura:iteration items="{!v.conlist}" var="ac">
+            <option value="{!ac.Id}">{!ac.LastName}</option>
+        </aura:iteration>        
+    </lightning:select>
+</aura:component>

@@ -1,0 +1,27 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Create Records" icon-name="standard:account">
+        <div if:false={recordid}>
+              <div class="slds-p-bottom_large slds-p-left_large" style="width:500px">
+        <div>
+            <lightning-input type="text" label="Name"  onchange={handleNameChange} value={nameValue}></lightning-input>
+            <lightning-input type="text" label="Phone"  onchange={handlePhoneChange} value={phoneValue} ></lightning-input>
+            <lightning-button
+                type="submit"
+                name="submit"
+                label="Create Record"
+                onclick={handleCreateRecord}
+            >
+            </lightning-button>
+        </div>
+        </div>
+        </div>   
+      
+        <div if:true={recordid}>
+           <h3> NEW {objectApiName} RECORD CREATED </h3><br>
+            Record ID = {recordid}, <br>
+            Name = {nameValue},<br>
+            Phone Number = {phoneValue}<br>
+        </div>
+    </lightning-card>
+    
+</template>

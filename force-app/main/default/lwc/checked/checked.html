@@ -1,0 +1,25 @@
+<template>
+    <lightning-record-edit-form record-id="Please Insert Record Id From Your ORG of Account Object"
+    object-api-name="Account">
+<lightning-messages>
+</lightning-messages>
+<lightning-output-field field-name="AccountId">
+</lightning-output-field>
+<lightning-input-field field-name="Name" value={nameVal} name="Acname" onchange={handleChange}>
+</lightning-input-field>
+<lightning-input-field field-name="Rating" value={ratingVal} name="rate" onchange={handleChange}>ail
+</lightning-input-field>
+<lightning-input-field field-name="Industry" name="industry" value={industryVal} onchange={handleChange}>
+</lightning-input-field>
+<template if:true={hideBtn}>
+<lightning-button
+class="slds-m-top_small"
+variant="brand"
+type="submit"
+name="update"
+label="Update">
+</lightning-button>
+</template>
+</lightning-record-edit-form>
+
+</template>

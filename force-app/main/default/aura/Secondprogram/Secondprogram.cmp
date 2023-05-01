@@ -1,0 +1,13 @@
+<aura:component controller ="Auracontact">
+    <aura:handler name ="init" action="{!c.doinit}" value="{!this}"/>
+    <aura:attribute name ="contactlist" type ="sObject" default ="[{}]"></aura:attribute> 
+    <aura:attribute name="columns" type="sObject[]" default=" [{ label: 'Last Name', fieldName: 'LastName', type: 'text' }]"></aura:attribute>
+     <lightning:datatable
+            columns="{! v.columns }"
+            data="{! v.contactlist }"
+            keyField="id"
+            onrowaction="{! c.handleRowAction }"/>
+    <aura:attribute name="namecheck" type="String"></aura:attribute>
+    <lightning:input label="First Name" value="{!v.namecheck}" ></lightning:input>
+    <lightning:button label = "Submit" onclick ="{!c.handlerinsert}"></lightning:button>
+</aura:component>

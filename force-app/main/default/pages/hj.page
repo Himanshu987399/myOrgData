@@ -1,0 +1,37 @@
+<!-- Page: -->
+<apex:page controller="chooseColor">
+    <script>
+    var stringvalue='';
+    function checkvalue(){
+        var stringval = '{!string}';
+        var checkvaluefield ='{!checkfield}';
+        console.log('1');
+        console.log(stringval);
+        console.log(checkvaluefield);
+        alert("work");
+    }
+    function valueupdate(){
+        var stringvalue ='{!checkfield}';
+        console.log(stringvalue);
+    }
+    </script>
+    <apex:form >
+        <div style="margin-top:10px">
+            <apex:selectList id="chooseColor" value="{!string}" size="1" >
+                Choose any One Item : 
+                <apex:selectOption itemValue="" itemLabel="--None--"/>
+                <apex:selectOption itemValue="yes" itemLabel="YES"/>
+                <apex:selectOption itemValue="no" itemLabel="NO"/>
+            </apex:selectList>
+        </div>
+        <div style="margin-top:10px">
+            Field : 
+            <apex:inputText value="{!checkfield}" id="theTextInput" onchange="valueupdate()"/>                  
+        </div>
+        
+        <div style="margin-top:10px">
+            <apex:commandButton value="Submit" onclick="checkvalue()"></apex:commandButton>
+        </div>
+        
+    </apex:form>
+</apex:page>

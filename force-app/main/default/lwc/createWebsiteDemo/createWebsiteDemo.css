@@ -1,0 +1,21 @@
+.flex{
+    display: flex;
+}
+.menuItem{
+    margin-left: 10px;
+    padding-top: 2px;
+}
+.text{
+    font-size: 20px;
+    font-family: cursive;
+    font-weight: bold;
+}
+.background{
+    height: 500px;
+    background-color: black;
+}
+.line{
+    border-color: darkgrey;
+    border-style: solid;
+    border-width: 1px;
+}

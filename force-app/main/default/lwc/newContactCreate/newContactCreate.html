@@ -1,0 +1,47 @@
+<template>
+    <lightning-card>
+        <div style="padding:20px">
+            <div style="display:flex">
+                <div>
+                    <div class="slds-p-around_medium ">
+                        <lightning-input type="text" label="AccountId" value={accountName}  readonly></lightning-input>
+                    </div>
+                    <div class="slds-p-around_medium ">
+                        <lightning-input type="Date" label="Planned Start Date"></lightning-input>
+                    </div>
+                    <div class="slds-p-around_medium ">
+                        <lightning-input type="text" label="Subject"></lightning-input>
+                    </div>
+                </div>
+                <div>
+                    <div class="slds-p-around_medium ">
+                        <lightning-combobox
+                            name="progress"
+                            label="Status"
+                            value={value}
+                            placeholder="Select Progress"
+                            options={options}
+                            onchange={handleChange}></lightning-combobox>
+    
+                    </div>
+                    <div class="slds-p-around_medium ">
+                        <lightning-input type="Date" label="Due Date"></lightning-input>
+                    </div>
+                    <div class="slds-p-around_medium ">
+                        <lightning-input type="text" label="Opportunity"></lightning-input>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slds-modal__footer">
+               
+                     
+                        <lightning-button variant="brand" label="Cancel" title="Primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                        <lightning-button variant="brand" label="Save and exit" title="Primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                        <lightning-button variant="brand" label="Next" title="Primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                     
+              </div>
+           
+        </div>
+    </lightning-card>
+</template>

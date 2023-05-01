@@ -1,0 +1,24 @@
+<aura:component controller="ApexSheetQuestion7" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"></aura:handler>
+    
+    <aura:attribute name="accountList" type="sObject[]" default="[{}]"></aura:attribute>
+    <aura:attribute name="columns" type="Sobject[]" default=" [{ label: 'Name', fieldName: 'Name', type: 'text','sortable':true },{ label: 'Account Number', fieldName: 'AccountNumber', type: 'text' },{label :'Phone', fieldName: 'Phone' ,type:'Text'}]"></aura:attribute>
+    <aura:attribute name="sortDirection" type="String" default="asc" />
+    <aura:attribute name="defaultSortDirection" type="String" default="asc" />
+    <aura:attribute name="sortedBy" type="String" />
+    <ltng:require scripts='/resource/sortLib'/>
+    <lightning:datatable
+                         columns="{! v.columns }"
+                         data="{! v.accountList }"
+                         keyField="id"
+                         hideCheckBoxColumn="true"
+                         defaultSortDirection="{!v.defaultSortDirection}"
+                         sortedDirection="{!v.sortDirection}"
+                         sortedBy="{!v.sortedBy}"
+                         onsort="{!c.handleSort}"/>
+        
+        
+        
+        
+    </aura:component>

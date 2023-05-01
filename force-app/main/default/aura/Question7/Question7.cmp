@@ -1,0 +1,33 @@
+<aura:component controller="auraQuestion7" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:handler name = "init" value = "{!this}" action = "{!c.doInit}"></aura:handler>
+    <aura:attribute name="username" type="String"></aura:attribute>
+    <aura:attribute name="password" type="String"></aura:attribute>
+    <aura:attribute name="ischecked1" type="boolean"></aura:attribute>
+    <aura:attribute name="ischecked2" type="boolean"></aura:attribute>
+    <aura:if isTrue="{!v.ischecked1}">
+        <div class ="slds-align_absolute-center slds-p-top_xx-large" >
+            <lightning:card class = "slds-class slds-p-left_xx-large slds-p-right_xx-large" >
+                
+                <div class = "slds-align_absolute-center" style="height:90px">
+                    
+                    <b>
+                        
+                        <lightning:input label ="USERNAME" class="username" aura:id ="username01" value="{!v.username}"></lightning:input> </b></div>
+                
+                
+                <div  class = "slds-align_absolute-center" style="height:90px" >
+                    <b><lightning:input label ="PASSWORD" class="password" aura:id ="password01" value="{!v.password}"></lightning:input>
+                    </b><br/></div>
+                
+                <div class = "slds-align_absolute-center" style="height:5rem">
+                    <lightning:button class="button" variant="brand" label="LOGIN" title="Brand action" onclick="{! c.handleClick }" />
+                    <lightning:button variant="brand" label="Forgot Password" title="Brand action" onclick="{!c.forgetpassword }" /></div>
+            </lightning:card>
+            
+        </div>
+        
+    </aura:if>
+    <aura:if isTrue="{!v.ischecked2}">
+        <c:forgetpassword></c:forgetpassword>
+    </aura:if>
+</aura:component>

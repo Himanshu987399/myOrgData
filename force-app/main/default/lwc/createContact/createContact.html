@@ -1,0 +1,23 @@
+<template>
+    <div style=" border: 1px;
+    border-style: solid;
+    padding: 20px;">
+    <b style="padding-left:10px">Contact</b>
+    <div style="display:flex">
+        <div style="padding-left:10px">
+            <lightning-input label="Last Name" type="text" onchange={lastNameChange}>
+            </lightning-input>
+        </div>
+        <div style="padding-left:10px">
+            <lightning-input label="First Name" type="text" onchange={firstNameChange}>
+            </lightning-input>
+        </div>
+        <div style="padding-left:10px">
+            <lightning-input label="Email" type="Email" onchange={emailChange}>
+            </lightning-input>
+        </div>
+    </div>
+       
+    </div>
+    
+</template>

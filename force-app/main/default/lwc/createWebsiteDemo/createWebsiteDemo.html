@@ -1,0 +1,89 @@
+<template>
+   
+    <div>
+         <!--header-->
+        <div class="slds-global-header">
+            <div class="slds-grid slds-grid_align-spread">
+                <div class="slds-col">
+                    <lightning-button-icon icon-name="utility:rows"   alternative-text="Zoom out" class="slds-m-left_xx-small" title="Zoom out" onclick={showNavigation}></lightning-button-icon>
+                    <div if:true={shownav}>
+                        <div class="slds-dropdown slds-dropdown_left">
+                            <ul class="slds-dropdown__list" role="menu" aria-label="Show More">
+                                <li class="slds-dropdown__item" role="presentation">
+                                    <a href="#" role="menuitem" tabindex="0">
+                                        <div class="flex">
+                                            <div>
+                                                <lightning-icon icon-name="utility:home" size="xx-small"></lightning-icon>
+                                            </div>
+                                            <div class="menuItem">
+                                                Home
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="slds-dropdown__item" role="presentation">
+                                    <a href="#" role="menuitem" tabindex="-1">
+                                        <div class="flex">
+                                            <div>
+                                                <lightning-icon icon-name="utility:user" size="xx-small"></lightning-icon>
+                                            </div>
+                                            <div class="menuItem">
+                                                Profile
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="slds-dropdown__item" role="presentation">
+                                    <a href="#" role="menuitem" tabindex="-1">
+                                        <div class="flex">
+                                            <div>
+                                                <lightning-icon icon-name="utility:settings" size="xx-small"></lightning-icon>
+                                            </div>
+                                            <div class="menuItem">
+                                                Setting
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="slds-align_absolute-center text slds-col">Demo Website</div>
+                <div class="slds-float_right slds-col">
+                    <lightning-avatar variant="circle" src="https://www.lightningdesignsystem.com/assets/images/avatar2.jpg" initials="AW" fallback-icon-name="standard:person_account" alternative-text="Amy Weaver" class="slds-m-right_medium"></lightning-avatar>
+                </div>
+            </div>
+        </div>
+        <!--Line-->
+        <div class="line"></div>
+        <!--body-->
+        <div class="background">
+            <lightning-carousel style="height:300px;width:300px">
+                <lightning-carousel-image
+                    src = "https://images.pexels.com/photos/302769/pexels-photo-302769.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    header = "First Card"
+                    description = "First card description."
+                    alternative-text = "First card accessible description."
+                    href = "javascript:void(0);">
+                </lightning-carousel-image>
+                <lightning-carousel-image
+                    src = "https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg"
+                    header = "Second Card"
+                    description = "Second card description."
+                    alternative-text = "Second card accessible description."
+                    href = "javascript:void(0);">
+                </lightning-carousel-image>
+                <lightning-carousel-image
+                    src = "https://www.lightningdesignsystem.com/assets/images/carousel/carousel-03.jpg"
+                    header = "Third Card"
+                    description = "Third card description."
+                    alternative-text = "Third card accessible description."
+                    href = "javascript:void(0);">
+                </lightning-carousel-image>
+            </lightning-carousel>
+        </div>
+    </div>
+    
+</template>

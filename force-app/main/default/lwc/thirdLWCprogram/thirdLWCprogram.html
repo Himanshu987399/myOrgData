@@ -1,0 +1,23 @@
+<template>
+    <div class="slds-m-top_medium slds-m-bottom_x-large">
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="Date" label="Update date of Opportunity" onchange={updateopportunity}></lightning-input>
+        </div>
+    </div>
+    <div class="slds-m-top_medium slds-m-bottom_x-large">
+        <div class="slds-p-around_medium lgc-bg">
+            Opportunity
+                <select class="slds-select" name="accListIndex" onchange={handlechange}>
+                    <template for:each={oppList} for:item="user" >
+                        <option key={user.Id} value={user.Id} >{user.Name}</option>
+                    </template>
+                </select>
+        </div>
+    </div>
+    <div>
+        <lightning-button variant="success" label="Success" title="Successful action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+    </div>
+    
+
+    
+</template>

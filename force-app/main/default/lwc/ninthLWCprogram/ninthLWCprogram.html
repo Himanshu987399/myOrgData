@@ -1,0 +1,16 @@
+<template>
+    <div>
+        ACCOUNTLIST
+        <select class="slds-select frm" name="conListIndex" onchange={lookup}>
+            <template for:each={accountlist} for:item="user" >
+                <option key={user.Id} value={user.Id} >{user.Name}</option>
+            </template>
+        </select>
+    </div>
+    <div>
+        <lightning-input label="Lookup Contact Name" value={conname} onchange={contactidcollect}></lightning-input>
+    </div>
+    <div>
+        <lightning-button variant="destructive" label="Lookup" title="Destructive action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+    </div>
+</template>

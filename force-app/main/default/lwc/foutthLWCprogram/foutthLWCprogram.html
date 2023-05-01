@@ -1,0 +1,30 @@
+<template>
+        <div>
+            object
+            <select class="slds-select" name="accListIndex" onchange={objectvalue}>
+                <template for:each={object} for:item="user" >
+                    <option key={user.Id} value={user.Id} >{user}</option>
+                </template>
+            </select>
+        </div> 
+        <div>
+            Field Name
+            <select class="slds-select" onchange={filledchange}>
+                <template for:each={filledname} for:item="user">
+                    <option key={user} value={user} >{user}</option>
+                </template>
+            </select>
+        </div> 
+        <div>
+            <lightning-input type="text" label="Field Type" value={fieldtype}></lightning-input>
+            <!--<lightning-input-field field-name="Name"> Hiamsnhu </lightning-input-field>-->
+            <!--<lightning-output-field field-name="TYPE OF THE Field"> </lightning-output-field>-->
+        </div>
+        <div>
+            <lightning-input type="text" label="API Name" value={apiname}></lightning-input>
+            <!--<lightning-input-field field-name="Name"> Hiamsnhu </lightning-input-field>-->
+            <!--<lightning-output-field field-name="TYPE OF THE Field"> </lightning-output-field>-->
+        </div>
+        
+    
+</template>

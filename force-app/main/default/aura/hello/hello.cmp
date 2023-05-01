@@ -1,0 +1,51 @@
+<aura:component controller="auraDatatable" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"></aura:handler>
+    
+    <aura:attribute name="accountList" type="sObject[]" default="[{}]"></aura:attribute>
+    <aura:attribute name="columns" type="Sobject[]" default=" [{ label: 'Name', fieldName: 'Name', type: 'text','sortable':true },{ label: 'Account Number', fieldName: 'AccountNumber', type: 'text' },{label :'Phone', fieldName: 'Phone' ,type:'Text'}]"></aura:attribute>
+    <aura:attribute name="sortDirection" type="String" default="asc" />
+    <aura:attribute name="defaultSortDirection" type="String" default="asc" />
+    <aura:attribute name="sortedBy" type="String" />
+    <ltng:require scripts='/resource/sortLib'/>
+    
+    <div aura:id="snipitTable" onclick="{!c.handleDOM}" class="snipitTable tableFixHead">
+        <br/><br/>
+       
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-labelledby="element-with-table-label other-element-with-table-label">
+            <thead >
+                <tr class="slds-line-height_reset">
+                    <th style='border:solid;' scope="col">
+                        <div class="slds-truncate" title="Name">Name</div>
+                    </th>
+                    <th style='border:solid;' scope="col">
+                        <div class="slds-truncate" title="Account Number">Account Number</div>
+                    </th>
+                    <th style='border:solid;' scope="col">
+                        <div class="slds-truncate" title="Phone">Phone</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                    <aura:iteration items="{!v.accountList}" var="item">
+                        <tr style='border:solid 1px;' >
+                            <th data-label="Name" scope="row">
+                                <div class="slds-truncate" title="Cloudhub">
+                                    {!item.Name}
+                                </div>
+                            </th>
+                            <td data-label="Account Number">
+                                <div class="slds-truncate"  title="4/14/2015">{!item.AccountNumber}</div>
+                            </td>
+                            <td data-label="Phone">
+                                <div class="slds-truncate" title="Prospecting">{!item.Phone}</div>
+                            </td>
+                        </tr>
+                    </aura:iteration>
+               
+            </tbody>
+        </table>
+        <!--<button onclick="{!c.handleDOM}">click me</button>-->
+    </div>
+    
+</aura:component>

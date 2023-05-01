@@ -1,0 +1,7 @@
+<template>
+    <div>
+        <lightning-input type="text" label="Prompt" value={prompt} onchange={updatePrompt}></lightning-input>
+        <lightning-button label="Submit" onclick={clickgetOpenAIresponse}></lightning-button>
+        <p>{response}</p>
+    </div>
+</template>

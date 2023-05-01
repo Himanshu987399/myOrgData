@@ -1,0 +1,10 @@
+.dummy{
+	color : black;
+}
+.padding{
+	padding: 1%;
+}
+.slds-text-align_center {
+    display: flex;
+    justify-content: center;
+  }
